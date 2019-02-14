@@ -1,4 +1,14 @@
-<?php
+ <?php
+ session_start();
+ if(!isset($_SESSION['admin'])){
+    header('location:loginadmin.php');
+ }
+ ?> 
+
+
+
+
+<?php 
 include "head.php";
 include "link.php";
 ?>

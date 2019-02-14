@@ -96,14 +96,30 @@ $id = $_GET['ID'];
 
                <div class="col-lg-8 col-xlg-9 col-md-7" style="border: solid #c3c3c3 1px; border-right:0px; border-bottom: 0px; border-top: 0px; width: 500px;height: 600px">
 
-        
-                        <?php 
+    <!-- Main Menu area start-->
+    <div class="main-menu-area mg-tb-40">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
+                        <li class="active"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i>Question</a>
+                        </li>
+                        <li><a data-toggle="tab" href="#mailbox"><i class="notika-icon notika-mail"></i>Answer</a>
+                        </li>
+                       
+                    </ul>
+                    <div class="tab-content custom-menu-content">
+                        <div id="Home" class="tab-pane in active notika-tab-menu-bg animated flipInX">
+                            <ul class="notika-main-menu-dropdown">
+                                <li>  <?php 
                         $id=$_GET['ID'];
                             $sql ="select title,description from question  where u_id=$id";
                             $result= mysqli_query($link,$sql)or die("not workisn query");
+                            echo '<h4>Qustion</h4>'; 
+                            echo '<hr>';
                             while ($row = $result->fetch_assoc()) {
-                                echo '<h2>Qustion</h2>';
-                                echo '<hr>';
+                                
+                               
 
                                 echo'<h3 style ="color:blue">'. $row["title"];echo '</h3>';
                                // echo '<hr>';
@@ -111,8 +127,16 @@ $id = $_GET['ID'];
                                 echo '<hr>';
 
                             }
-
-                            $ansql="select * from answer where u_id=$id";
+                            ?>
+                                </li>
+                             
+                              
+                            </ul>
+                        </div>
+                        <div id="mailbox" class="tab-pane notika-tab-menu-bg animated flipInX">
+                            <ul class="notika-main-menu-dropdown">
+                                
+                                <li><?php $ansql="select * from answer where u_id=$id";
                             $anresult = mysqli_query($link, $ansql)or die("not working");
                             echo '<h3 style ="color:#c30f00">Answers</h3>';
                             echo '<hr>';
@@ -122,7 +146,20 @@ $id = $_GET['ID'];
                                  
                                  
                                }
-                        ?>
+                               ?>
+                                </li>
+                                                            </ul>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main Menu area End-->
+
+
+        
                     </div>
                <br><br><br><br>     
                     </div>
@@ -134,7 +171,9 @@ $id = $_GET['ID'];
                
     <!-- End Realtime sts area-->
     <!-- Start Footer area-->
-
+<?php
+include "footer2.php";
+?>
 </body>
 
 </html>

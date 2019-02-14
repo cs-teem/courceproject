@@ -1,4 +1,9 @@
-
+      <?php
+session_start();
+if(!isset($_SESSION['login'])){
+  header("location:login.php?error");
+}
+ ?>
 
 <?php
 include "head.php";
@@ -6,11 +11,6 @@ include "head.php";
 
 
       
-session_start();
-if(!isset($_SESSION['login'])){
-  header("location:login.php?error");
-}
-
 
 
 
@@ -42,8 +42,7 @@ include "top header.php";
                         </div>
 
 
-
-                          <?php
+                      <?php
 if(isset($_POST['post'])){
 $subject=$_POST['subject'];
 $discription=$_POST['discription'];
@@ -66,17 +65,9 @@ $user=$_SESSION['login'];
 $title= $_POST['title'];
 $discription = $_POST['description'];
 $sql="INSERT INTO `question`( `description`, `u_id`, `cat_id`, `title`) VALUES('$discription',$user,$cat_id,'$title')";
-
-if(mysqli_query($link,$sql)){
-echo "<script> alert('the data has been posted'); </script>";
-}
-else{
-
-  echo "<script> alert('Faildddd'); </script>";
-}
+$result=mysqli_query($link,$sql);
 }
  ?>
-
                        <form class="form-horizontal form-material" method="post" action="askquestion.php" enctype="multipart/form-data">
                         <div class="cmp-int mg-t-20">
                             <div class="row">
