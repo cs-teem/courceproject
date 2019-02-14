@@ -1,3 +1,5 @@
+  
+
     <div class="header-top-area">
         <div class="container">
             <div class="row">
@@ -51,7 +53,7 @@
                             <li><a href="sing up.php" role="button" aria-expanded="false"><span>sign up</span></a>
                               
                             </li>
-                            <li class="nav-item"><a href="member.php" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><p>members</p></a>
+                            <li class="nav-item"><a href="member.php"class="nav-link dropdown-toggle"><p>members</p></a>
                               
                             </li>
                             <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span>category</span></a>
