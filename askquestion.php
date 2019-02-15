@@ -1,4 +1,6 @@
       <?php
+include "link.php";
+
 session_start();
 if(!isset($_SESSION['login'])){
   header("location:login.php?error");
@@ -7,15 +9,6 @@ if(!isset($_SESSION['login'])){
 
 <?php
 include "head.php";
-
-
-
-      
-
-
-
-include "link.php";
-
 ?>
 <body>
 <?php
@@ -42,7 +35,8 @@ include "top header.php";
                         </div>
 
 
-                      <?php
+
+                          <?php
 if(isset($_POST['post'])){
 $subject=$_POST['subject'];
 $discription=$_POST['discription'];
@@ -65,10 +59,18 @@ $user=$_SESSION['login'];
 $title= $_POST['title'];
 $discription = $_POST['description'];
 $sql="INSERT INTO `question`( `description`, `u_id`, `cat_id`, `title`) VALUES('$discription',$user,$cat_id,'$title')";
-$result=mysqli_query($link,$sql);
+
+if(mysqli_query($link,$sql)){
+echo "<script> alert('the data has been posted'); </script>";
+}
+else{
+
+  echo "<script> alert('Faildddd'); </script>";
+}
 }
  ?>
-                       <form class="form-horizontal form-material" method="post" action="askquestion.php" enctype="multipart/form-data">
+
+                       <form method="post" action="askquestion.php">
                         <div class="cmp-int mg-t-20">
                             <div class="row">
                                 <div class="col-lg-1 col-md-2 col-sm-2 col-xs-12">
@@ -79,7 +81,7 @@ $result=mysqli_query($link,$sql);
                                 <div class="col-lg-11 col-md-10 col-sm-10 col-xs-12">
                                     <div class="form-group">
                                         <div class="nk-int-st cmp-int-in cmp-email-over">
-                                             
+ 
                                             <input type="text" name="title" class="form-control" id="subject"/>
                                         </div>
                                     </div>
@@ -87,15 +89,16 @@ $result=mysqli_query($link,$sql);
                             </div>
                             </div>
                         </div>
-                        
+                       
                         <div class="cmp-int-box mg-t-20">
-                            <textarea class="html-editor-cm"id="message" cols="30" rows="10" class="form-control" placeholder="Write Your Question?" ></textarea>
+                            <textarea class="html-editor-cm" id="message" name="description" cols="30" rows="10" class="form-control" placeholder="Write Your Question?" ></textarea>
                             <!-- <input type="submit"  name="save" value="Save"> -->
-                            <button type="submit" class="btn btn-success notika-btn-success" name="btn" name="save">test</button>
+                      <input type="hidden" value="<?php echo $_GET['ID']?>" name="cat_id">
+                            <button type="submit" class="btn btn-success notika-btn-success" name="save">Save</button>
                         </div>
                       
                         <div class="vw-ml-action-ls text-right mg-t-20">
-                            <input type="hidden" value="<?php echo $_GET['ID']?>" name="cat_id">
+                           
 
                         </div>
                         <center>
