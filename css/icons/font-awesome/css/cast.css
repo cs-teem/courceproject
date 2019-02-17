@@ -1,0 +1,33 @@
+.notification {
+	background-color: #555;
+	color: white;
+	text-decoration: none;
+	padding: 10px 20px;
+	position: relative;
+	display: inline-block;
+	border-radius: 2px;
+}
+.notification:hover {
+	background: blue;
+}
+.notification .badge {
+position: absolute;
+top: -15px
+right: -10px;
+padding: 5px;
+border-radius: 50%;
+font-family: inherit;
+background: red;
+color: white;
+}
+/*.notification {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 400;
+  src: url("css/icons/font-awesome/webfonts/fa-regular-400.eot");
+  src: url("css/icons/font-awesome/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("css/incons/font-awesome/webfonts/fa-regular-400.woff2") format("woff2"), url("../webfonts/fa-regular-400.woff") format("woff"), url("../webfonts/fa-regular-400.ttf") format("truetype"), url("../webfonts/fa-regular-400.svg#fontawesome") format("svg"); }
+
+.far {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 400; }
+*/

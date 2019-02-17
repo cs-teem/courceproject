@@ -53,12 +53,17 @@ text{
 }
                                 </style>
 
-                                <div class="jumbotron">
-                                <span><a href="answer.php?ID=<?php echo $row["id"];?>">answer[<?php echo $rows['questions']?>]</a></span>
-                                <span style="margin:20px; text-decoration: none;font-size:15px;font-style:oblique;"><a href="answer.php?ID=<?php echo $row["id"];?>"><?php echo $row['description']?>?</a></span> 
+                                <div class="jumbotron"><a class="notification" href="" >
+    
+    <small>Answers</small>
+    <span class="badge" style="font-size: 50%"> <?php if($rows>1000){echo $rows['questions'];}else{echo"k+";}?></span>
+</a>
+                                <span><a href="answer.php?ID=<?php echo $row["id"];?>"></a></span>
+                                <span ><a href="answer.php?ID=<?php echo $row["id"];?>"><?php echo $row['description']?>?</a></span> 
                             
                 
                                 </div>
+
                             
 
 
@@ -77,6 +82,7 @@ text{
     <!-- End Realtime sts area-->
     <!-- Start Footer area-->
 <?php
+
 
 include "footer.php";
 ?>

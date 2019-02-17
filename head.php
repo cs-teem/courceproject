@@ -54,6 +54,18 @@
     <!-- responsive CSS
 		============================================ -->
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet"  href="css/icons/font-awesome/css/fa-brands.css">
+     <link rel="stylesheet"  href="css/icons/font-awesome/css/fa-brands.min.css">
+      <link rel="stylesheet"  href="css/icons/font-awesome/css/fa-regular.css">
+       <link rel="stylesheet"  href="css/icons/font-awesome/css/fa-regular.min.css">
+        <link rel="stylesheet"  href="css/icons/font-awesome/css/fa-solid.css">
+      <link rel="stylesheet"  href="css/icons/font-awesome/css/fa-solid.min.css">
+       <link rel="stylesheet"  href="css/icons/font-awesome/css/fa-solid.min.css">
+        <link rel="stylesheet"  href="css/icons/font-awesome/css/fontawesome.css">
+      <link rel="stylesheet"  href="css/icons/font-awesome/css/fontawesome.min.css">
+       <link rel="stylesheet"  href="css/icons/font-awesome/css/fontawesome-all.css">
+         <link rel="stylesheet"  href="css/icons/font-awesome/css/fontawesome-all.min.css">
+         <link rel="stylesheet"  href="css/icons/font-awesome/css/cast.css">
     <!-- modernizr JS
 		============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script> 
