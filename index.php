@@ -11,7 +11,6 @@ include "top header.php";
 #img{
   height: 50px;
   width: 50px;
-
 }
 </style>
     <!-- Main Menu area End-->
