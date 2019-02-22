@@ -1,11 +1,8 @@
-      <?php
-
-
-
- session_start();
- if(!isset($_SESSION['admin'])){
-    header('location:loginadmin.php');
- }
+    <?php
+    session_start();
+if(!isset($_SESSION['login'])){
+  header("location:login.php?error");
+}
 
  include "link.php";
  ?> 

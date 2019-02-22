@@ -1,10 +1,4 @@
 <html>
-    <?php
-    session_start();
-if(!isset($_SESSION['login'])){
-  header("location:login.php?error");
-}
-?>
 
 
 <head>
@@ -65,32 +59,8 @@ include "top header.php";
 
 <p style="font-style:italic;font-weight: bold;text-indent: inherit;text-align: justify">answer</p>
 <br>
+
 <?php
-if(isset($_POST['answer'])){
-$discription=$_POST['content'];
-$u_id=$_SESSION['login'];
-$qu_id=$_POST['qu_id'];
-$catSql="SELECT cat_id FROM `question` WHERE id='$qu_id'";
-$result=mysqli_query($link,$catSql);
-$row=mysqli_fetch_assoc($result);
-$cat_id=$row['cat_id'];
-$insersql="INSERT INTO `answer`(`discription`, `cat_id`, `qu_id`, `u_id`,date) VALUES('$discription',$cat_id,$qu_id,$u_id,CURRENT_DATE)";
-mysqli_query($link,$insersql);
-
-
-}
-    if(isset($_GET['ID'])){
-        $id = $_GET['ID'];
-        }
-?>
-
-
-
-                            
-                            <?php
-                            if(isset($_GET['ID'])){
-                                $id = $_GET['ID'];
-}
 
         $sql = "select answer.discription,u.name,u.email,u.photo,answer.date FROM user u,answer WHERE u.id= answer.u_id and qu_id=$id";
       $sql=mysqli_query($link,$sql);
@@ -127,33 +97,25 @@ text-align:
 }
 ?>
                         </DIV>
-                        <form method="post" action="answer.php?ID=<?php echo $id;?>">
-      <div class="cmp-int-box mg-t-15">
-                            <textarea class="html-editor-cm"  name="content" id="message"></textarea>
-                            
-                            <input type="hidden" name="qu_id" value="<?php echo $_GET['ID'];?>">
-                        </div>
-
-
-                                                        <div class="btn-group pull-right">
+<div style="float:center">
+<a href="answerquestion.php?ID=<?php  echo $id;?>"type="submit" name="submit" class="btn btn-success notika-btn-success">  answer the question </a>
+    <!-- Main Menu area End-->
+</div>
 
 
 
 
-                                                        <?php if(!$_SESSION["login"]) { 
-
-                                                        header("location:login.php?session=null");
-                                                    }?>
 
 
-                                                    
-                                                        <a href="answer.php?ID=<?php echo $id;?>"><button class="btn btn-sm btn-purple" type="submit" name="answer" >
-                                                            <i class="ace-icon fa fa-floppy-o bigger-125"></i>
-                                                            post
-                                                        </button></a>
-              </form>
              
-               <br><br><br><br>     
+               <br><br><br><br> 
+
+
+
+
+
+
+
                     </div>
                 </div>
             </div>

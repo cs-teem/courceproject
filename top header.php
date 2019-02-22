@@ -72,7 +72,7 @@
                                     <div class="hd-message-info">
                                       
         <?php
-      $query="select * from category";
+      $query="select category,discription from category where id<=5";
       $sql=mysqli_query($link,$query);
       while ($row=mysqli_fetch_array($sql)) {
       ?>
@@ -94,7 +94,7 @@
                                             <?php }?> 
                                     </div>
                                     <div class="hd-mg-va">
-                                        <a href="#">View All</a>
+                                        <a href="view_category.php">View All</a>
                                     </div>
                                 </div>
                             </li>
