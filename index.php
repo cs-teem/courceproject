@@ -49,13 +49,13 @@ include "top header.php";
 
                                      
                                 ?>
-<<<<<<< HEAD
+
                                 
                                 <style type="text/css">
 text{
     font-size: 12px;
-=======
->>>>>>> efc8352dbdeb8649ad55543132a594316a56f0a5
+
+
 
 
 
@@ -63,9 +63,7 @@ text{
                             </style>
 
                                 <div class="jumbotron"><a class="notification" href="" >
-    
-<<<<<<< HEAD
-                                <small>Answers</small>
+                 <small>Answers</small>
                                 <span class="badge" style="font-size: 50%"> <?php if($rows>1000){echo $rows['questions'];}else{echo"k+";}?></span>
                                 </a>
                                 <span><a href="answer.php?ID=<?php echo $row["id"];?>"></a></span>
@@ -73,7 +71,7 @@ text{
                                  <div class="scorll">  
                                   
                                  </div>
-=======
+
     <small>Answers</small>
     <span class="badge" style="font-size: 50%;"> <?php if($rows>1000){echo $rows['questions'];}else{echo"k+";}?></span>
 </a>                                 <span ><a href="answer.php?ID=<?php echo $row["id"];?>"></a></span>
@@ -89,8 +87,7 @@ text{
  <?php
 }
 ?>
->>>>>>> efc8352dbdeb8649ad55543132a594316a56f0a5
-                
+
                                 
 
                             
