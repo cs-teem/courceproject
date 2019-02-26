@@ -26,7 +26,7 @@ include "top header.php";
      }
      ?>
     <div class="sale-statistic-area" >
-      
+
         <div class="container"  style="margin-right: 200px">
             <div class="row">
                 <div class="col-lg-12 col-md-8 col-sm-20 col-xs-20">
@@ -71,6 +71,14 @@ text{
                                 <span ><a href="answer.php?ID=<?php echo $row["id"];?>"><?php echo $row['description']?>?</a></span> 
                                  <div class="scorll" style="margin-right: 200px">  
                                   <hr>
+                                  <?php 
+                                  $test=$row['id'];
+                                        $s="SELECT discription from question,answer WHERE question.id= answer.qu_id and question.id=$test order by discription DESC LIMIT 1" ;
+                                        $q=mysqli_query($link,$s);
+                                        $r=mysqli_fetch_array($q);
+                                        echo $r['discription'];
+
+                                   ?>
                                   په دې سکرول  باکس
                                    په دې ځای کې باید هغه ځواب را پورته شي چې د اخري یوزر له ورکړل شوي ږي
 
