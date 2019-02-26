@@ -6,6 +6,13 @@ include "link.php";
 <?php
 include "top header.php";
 ?>
+
+<style type="text/css">
+#img{
+  height: 50px;
+  width: 50px;
+}
+</style>
     <!-- Main Menu area End-->
     <!-- Start Status area -->
     
@@ -27,19 +34,14 @@ include "top header.php";
                         <?php
         if(isset($_GET['ID'])){
         $id = $_GET['ID'];
-}
-        
-     ?>
-     
-          <?php
+        }
+   
       $query="select * from question";
       $sql=mysqli_query($link,$query);
       while ($row=mysqli_fetch_array($sql)) {
       
     
 
-                                  ?>                        
-                                <?php
                                 $test=$row['id'];
                                     $test= "SELECT count(*) as questions from question,answer WHERE question.id= answer.qu_id and question.id=$test";
                                     $qu=mysqli_query($link,$test);
@@ -47,51 +49,53 @@ include "top header.php";
 
                                      
                                 ?>
+<<<<<<< HEAD
                                 
                                 <style type="text/css">
 text{
     font-size: 12px;
+=======
+>>>>>>> efc8352dbdeb8649ad55543132a594316a56f0a5
 
-    font-style:;
-}
-                                </style>
+
+
+                                <style type="text/css">
+                            </style>
 
                                 <div class="jumbotron"><a class="notification" href="" >
     
+<<<<<<< HEAD
                                 <small>Answers</small>
                                 <span class="badge" style="font-size: 50%"> <?php if($rows>1000){echo $rows['questions'];}else{echo"k+";}?></span>
                                 </a>
                                 <span><a href="answer.php?ID=<?php echo $row["id"];?>"></a></span>
                                 <span ><a href="answer.php?ID=<?php echo $row["id"];?>"><?php echo $row['description']?>?</a></span> 
                                  <div class="scorll">  
-                                  <?php 
-                                       $answer="select answer from 
-                                       answer 
-                                       order by DESC LIMIT 1";
-                                        $sq=mysqli_query($link,$answer);
-                                     $r = mysqli_fetch_array($sq);
-                                        echo $r['id'];
-                                       
-                                            
-                                      ?>
-                                 
-                                     <?php 
-
-                                        // $qry="select discription
-                                        //   from answer,question
-                                        //   where cat_id=cat_id"
-                                        //   $sq=mysqli_query($link,$query2);
-                                        //   $r=mysqli_fetch_assoc($sq);
-                                      ?>
+                                  
                                  </div>
+=======
+    <small>Answers</small>
+    <span class="badge" style="font-size: 50%;"> <?php if($rows>1000){echo $rows['questions'];}else{echo"k+";}?></span>
+</a>                                 <span ><a href="answer.php?ID=<?php echo $row["id"];?>"></a></span>
+                             
+                             <span ><a href="answer.php?ID=<?php echo $row["id"];?>"><?php echo $row['description']?>?</a></span> 
+                       
+
+
+
+
+</div>
+
+ <?php
+}
+?>
+>>>>>>> efc8352dbdeb8649ad55543132a594316a56f0a5
                 
-                                </div>
+                                
 
                             
 
 
-<?php
-}?>
 
     
                       

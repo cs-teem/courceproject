@@ -1,4 +1,4 @@
-  
+a  
 
     <div class="header-top-area">
         <div class="container">
@@ -59,16 +59,20 @@
                             <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span>category</span></a>
                                 <div role="menu" class="dropdown-menu message-dd chat-dd animated zoomIn">
                                     <div class="hd-mg-tt">
-                                        <h4>category</h4>
+                                       <center> <h4>category</h4></center>
+                                       <center><a href="add_category.php"><p class="btn btn-success notika-btn-success">add_category</p></a></center>
                                     </div>
-                                    <div class="search-people">
-                                        <i class="notika-icon notika-left-arrow"></i>
-                                        <input type="text" placeholder="Search People" />
+
+       
+                                    <div class="search-people" class="col_6 column">
+                                        <i class="notika-icon notika-left-arrow" type="submit" name="src_btn"></i>
+                                        <input type="text" placeholder="Search People" name="search" />
+                                       
                                     </div>
                                     <div class="hd-message-info">
                                       
-                                                                                      <?php
-      $query="select * from category";
+        <?php
+      $query="select category,discription from category where id<=5";
       $sql=mysqli_query($link,$query);
       while ($row=mysqli_fetch_array($sql)) {
       ?>
@@ -90,7 +94,7 @@
                                             <?php }?> 
                                     </div>
                                     <div class="hd-mg-va">
-                                        <a href="#">View All</a>
+                                        <a href="view_category.php">View All</a>
                                     </div>
                                 </div>
                             </li>
