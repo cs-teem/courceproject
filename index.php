@@ -25,10 +25,11 @@ include "top header.php";
 
      }
      ?>
-    <div class="sale-statistic-area">
-        <div class="container">
+    <div class="sale-statistic-area" >
+      
+        <div class="container"  style="margin-right: 200px">
             <div class="row">
-                <div class="col-lg-12 col-md-8 col-sm-7 col-xs-9">
+                <div class="col-lg-12 col-md-8 col-sm-20 col-xs-20">
                     <div class="sale-statistic-inner notika-shadow mg-tb-30">
  
                         <?php
@@ -68,15 +69,20 @@ text{
                                 </a>
                                 <span><a href="answer.php?ID=<?php echo $row["id"];?>"></a></span>
                                 <span ><a href="answer.php?ID=<?php echo $row["id"];?>"><?php echo $row['description']?>?</a></span> 
-                                 <div class="scorll">  
-                                  
+                                 <div class="scorll" style="margin-right: 200px">  
+                                  <hr>
+                                  په دې سکرول  باکس
+                                   په دې ځای کې باید هغه ځواب را پورته شي چې د اخري یوزر له ورکړل شوي ږي
+
+
+
                                  </div>
 
     <small>Answers</small>
-    <span class="badge" style="font-size: 50%;"> <?php if($rows>1000){echo $rows['questions'];}else{echo"k+";}?></span>
+    <span class="badge" style="font-size: 50%"> <?php if($rows>1000){echo $rows['questions'];}else{echo"k+";}?></span>
 </a>                                 <span ><a href="answer.php?ID=<?php echo $row["id"];?>"></a></span>
                              
-                             <span ><a href="answer.php?ID=<?php echo $row["id"];?>"><?php echo $row['description']?>?</a></span> 
+                             <span ><a href="answer.php?ID=<?php echo $row["id"];?>"><?php //echo $row['description']?></a></span> 
                        
 
 
