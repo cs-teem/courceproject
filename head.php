@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Bootstrap CSS
 		============================================ -->
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+        <script type="text/javascript" src="css/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="css/jquery-1.11.3.min.js"></script>
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <!-- owl.carousel CSS
 		============================================ -->

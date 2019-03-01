@@ -11,43 +11,30 @@ include "top header.php";
     <!-- End Status area-->
     <!-- Start Sale Statistic area-->
     <div class="sale-statistic-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-11 col-md-10 col-sm-4 col-xs-12">
-                    <div class="sale-statistic-inner notika-shadow mg-tb-30">
-                        
+       
     <?php
+include "aside.php";
+
 if(isset($_POST['post'])){
-$name=mysql_real_escape_string($_POST['name']);
-$lastname=mysql_real_escape_string($_POST['lastname']);
-$email=mysql_real_escape_string($_POST['email']);
-$password=mysql_real_escape_string($_POST['password']);
-$enc_password=md5($password);
+$name=$_POST['name'];
+$lastname=$_POST['lastname'];
+$email=$_POST['email'];
+$password=$_POST['password'];
 $photo=addslashes(file_get_contents($_FILES["photo"]["tmp_name"])); 
+$query="insert into user(name,last_name,email,password,photo) values ('$name','$lastname','$email','$password','$photo')";
+if(mysqli_query($link,$query)){
+echo "<script> alert('the data has been posted'); </script>";
+}
+else{
 
-if($name && $email && $password){
-	$confirm_code=rand();
-	
-$query="insert into user(name,last_name,email,password,photo,confirm_code) values ('$name','$lastname','$email','$enc_password','$photo','$confirm_code')";
-mysqli_query($link,$query);
-
-$headers = 'From: esmatullahsangary@gmail.com' . "\r\n" .
-    'Reply-To: webmaster@example.com' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
-	
-$message="
-Confirm your Email
-Click the Link Bello to confirm your Email
-http://localhost/courceproject/ConfirmEmail.php?username=$name & code=$confirm_code"
-;
-mail($email,"Verifry your email",$message,$headers);
-echo "Registeration completed";
-
-
-
+  echo "<script> alert('Faildddd'); </script>";
 }
 }
  ?>
+ </div>
+    <div class="col-sm-8" style="background-color:white;">
+       <div class="sale-statistic-inner notika-shadow mg-tb-30">
+ 
 <form class="form-horizontal form-material" method="post" action="sing up.php" enctype="multipart/form-data">
                           <center>  <div class="curved-ctn">
                                 <h2>Create profile</h2>
