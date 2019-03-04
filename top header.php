@@ -1,4 +1,4 @@
-
+s
 
     <div class="header-top-area">
         <div class="container">
@@ -30,15 +30,17 @@
                                         <style type="text/css">
 
                                         </style>
-                          <div class="col-sm-3" style="background-color:lavender;text-align:right"><a href="login.php"><span>login</span></a></div>
-                         <div class="col-sm-3" style="background-color:lavenderblush;"><a href="logout.php"><span>logout</span></a></div>
+                          <div class="col-sm-6" style="text-align:right"><a  href="login.php"><span>login</span></a></div>
+                         <div class="col-sm-1" style=""><a href="logout.php"><span>logout</span></a></div>
                          
                             </div>
                                  
                                     
                                 </div>
                             </li>
-                            <li><a href="sing up.php" role="button" aria-expanded="false"><span>sign up</span></a>
+                            <li><a href="sing up.php" role="button" aria-expanded="false">
+                               <small>  <span class="sign">Sing Up</span></a></small>
+                            
                               
                             </li>
                             <li class="nav-item"><a href="member.php"class="nav-link dropdown-toggle"><i class="glyphicon glyphicon-user"></i></a>

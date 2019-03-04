@@ -76,7 +76,7 @@ include "aside.php";
 
                                 <div class="jumbotron"><a class="notification" href="" >
     
-    <small>Answers</small>
+    <small>Answer</small>
     <span class="badge" style="font-size: 50%;line-height:0.2;"> <?php if($rows>1000){echo $rows['questions'];}else{echo"k+";}?></span>
 </a>                                 <span ><a href="answer.php?ID=<?php echo $row["id"];?>"></a></span>
                              

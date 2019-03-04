@@ -20,6 +20,15 @@ font-family: inherit;
 background: red;
 color: white;
 }
+.sign {
+	background-color: red;
+	color: white;
+	text-decoration: none;
+	padding: 5px 10px;
+	position: relative;
+	display: inline-block;
+	border-radius: 2px;
+}
 /*.notification {
   font-family: 'Font Awesome 5 Free';
   font-style: normal;
