@@ -65,10 +65,11 @@ include "link.php";
         <!-- Login -->
  <?php
 if(isset($_POST['login'])){
-$username=$_POST["username"];
-$password=$_POST["password"];
+$username=mysqli_real_escape_string($link,$_POST["username"]);
+$password=mysqli_real_escape_string($link,$_POST["password"]);
+$encryp=md5($password);
 
-$for=mysqli_query($link,"select * from user where name='$username' AND password='$password'");
+$for=mysqli_query($link,"select * from user where name='$username' AND password='$encryp' and status=1 ");
 $row=mysqli_num_rows($for);
 $array=mysqli_fetch_assoc($for);
 if($row==1){
@@ -99,12 +100,12 @@ else{
                 <div class="fm-checkbox">
                     <label><input type="checkbox" class="i-checks"> <i></i> Keep me signed in</label>
                 </div>
-                <a href="#l-register" data-ma-action="nk-login-switch" data-ma-block="#l-register" class="btn btn-login btn-success btn-float"><i class="notika-icon notika-right-arrow right-arrow-ant"></i></a>
+                <a href="sing up.php" data-ma-action="nk-login-switch" data-ma-block="#l-register" class="btn btn-login btn-success btn-float"><i class="notika-icon notika-right-arrow right-arrow-ant"></i></a>
            <input type="submit" name="login" class="btn btn-success" value="login">
             </div> 
 
             <div class="nk-navigation nk-lg-ic">
-                <a href="#" data-ma-action="nk-login-switch" data-ma-block="#l-register"><i class="notika-icon notika-plus-symbol"></i> <span>Register</span></a>
+                <a href="sing up.php"  data-ma-block="#l-register"><i class="notika-icon notika-plus-symbol"></i> <span>Register</span></a>
                 <a href="#" data-ma-action="nk-login-switch" data-ma-block="#l-forget-password"><i>?</i> <span>Forgot Password</span></a>
             </div>
         </div>

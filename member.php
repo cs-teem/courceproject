@@ -72,7 +72,7 @@ if(isset($_POST['diactivateuser'])){
                                     <?php
 
                                                 include "link.php";
-                                                $sql="SELECT * FROM user";
+                                                $sql="SELECT * FROM user where status!=11";
                                                 $restult=mysqli_query($link,$sql);
 
 

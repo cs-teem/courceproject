@@ -46,11 +46,11 @@ include "head.php";
 
 <?php
 if(isset($_POST['logina'])){
-$username=$_POST["username"];
-$password=$_POST["password"];
+$username=mysqli_real_escape_string($link,$_POST["username"]);
+$password=mysqli_real_escape_string($link,$_POST["password"]);
+$encryp=md5($password);
 $id=11;
-
-$for=mysqli_query($link,"select * from user where name='$username' AND password='$password' and status='$id'");
+$for=mysqli_query($link,"select * from user where name='$username' AND password='$encryp' and status=11");
 $row=mysqli_num_rows($for);
 $array=mysqli_fetch_assoc($for);
 if($row==1){
