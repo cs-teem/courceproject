@@ -84,16 +84,16 @@ mysqli_query($link,$insersql);
 
 
                                                         <div class="btn-group pull-right">
-                                                        <a href="answerquestion.php?ID=<?php echo $id;?>"><button class="btn btn-sm btn-purple" type="submit" name="answer" >
-                                                            <i class="ace-icon fa fa-floppy-o bigger-125"></i>
+                                                        <a href="answerquestion.php?ID=<?php echo $id;?>"><button class="btn btn-success notika-btn-success" type="submit" name="answer" >
+                                                            <i class="glyphicon glyphicon-floppy-saved"></i>
                                                             post
                                                         </button></a>
                                                           
               </form>
-             <a href="answer.php?ID=<?php echo $id;?>"><button class="btn btn-sm btn-purple" type="submit" name="answerw" >
-                                                            <i class="ace-icon fa fa-floppy-o bigger-125"></i>
+             <a href="answer.php?ID=<?php echo $id;?>"  class="btn btn-success notika-btn-success"type="submit">
+                                                            <i class="glyphicon glyphicon-arrow-left"></i>
                                                             back
-                                                        </button></a>
+                                                       </a>
                <br><br><br><br> 
 
 

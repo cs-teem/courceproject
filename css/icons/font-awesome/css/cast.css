@@ -20,13 +20,26 @@ font-family: inherit;
 background: red;
 color: white;
 }
-.scorll{
+.sign {
+	background-color: red;
+	color: white;
+	text-decoration: none;
+	padding: 5px 10px;
+	position: relative;
+	display: inline-block;
+	border-radius: 2px;
+}
+ .scorll{
+
 	border: none;
-	height: 400px;
-	width: 450px;
-	overflow: scroll;
+	height: 120px;
+	width: 550px;
+	display:inline-block;
+	outline-color: #444;
+	
 
 }::-webkit-scrollbar {
+	
 width: 10px;
 height: 10px;
 background: none;
@@ -40,7 +53,10 @@ border-radius: 10px;
 	background: yellowgreen;
 	border-radius: 10px;
 }
+.scorll:hover {
 
+	overflow: scroll;
+}
 /*.notification {
   font-family: 'Font Awesome 5 Free';
   font-style: normal;

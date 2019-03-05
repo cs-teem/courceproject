@@ -19,11 +19,16 @@ include "top header.php";
      ?>
      <br><br>
     <div class="sale-statistic-area">
-        <div class=""><a class="btn btn-info"href="askquestion.php?ID='<?php echo $id;?>'" style="margin-left: 85%">Ask Question</a></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-8 col-sm-7 col-xs-9">
-                    <div class="sale-statistic-inner notika-shadow mg-tb-30">
+        <div class=""><a class="btn btn-success notika-btn-success"href="askquestion.php?ID='<?php echo $_GET['ID'];?>'" style="margin-left: 85%">Ask Question</a></div>
+    <?php 
+include "aside.php";
+    ?>
+      <hr>
+    </div>
+    <div class="col-sm-8" style="background-color:white;">
+       <div class="sale-statistic-inner notika-shadow mg-tb-30">
+ <br><br><br><br>
+               
 <?php
         if(isset($_GET['ID'])){
         $id = $_GET['ID'];
@@ -53,7 +58,7 @@ include "top header.php";
                                     $qu=mysqli_query($link,$test);
                                     $rows = mysqli_fetch_assoc($qu);
                                 ?><div  style="margin-left:2px;padding:0px">
-                                <div class="jumbotron" style="background-color:lavenderblush">
+                                <div class="jumbotron">
                                 <span>answer(<?php echo $rows['questions']?>)</span>
                                 <span style="margin:20px; text-decoration: none;font-size:15px;font-style:oblique;"><a href="answer.php?ID=<?php echo $row["id"];?>"><?php echo $row['description']?></a></span> 
                                 

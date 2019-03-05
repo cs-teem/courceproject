@@ -11,12 +11,10 @@ include "top header.php";
     <!-- End Status area-->
     <!-- Start Sale Statistic area-->
     <div class="sale-statistic-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-11 col-md-10 col-sm-4 col-xs-12">
-                    <div class="sale-statistic-inner notika-shadow mg-tb-30">
-                        
+       
     <?php
+include "aside.php";
+
 if(isset($_POST['post'])){
 $name=mysql_real_escape_string($_POST['name']);
 $lastname=mysql_real_escape_string($_POST['lastname']);
@@ -48,6 +46,10 @@ echo "Registeration completed";
 }
 }
  ?>
+ </div>
+    <div class="col-sm-8" style="background-color:white;">
+       <div class="sale-statistic-inner notika-shadow mg-tb-30">
+ 
 <form class="form-horizontal form-material" method="post" action="sing up.php" enctype="multipart/form-data">
                           <center>  <div class="curved-ctn">
                                 <h2>Create profile</h2>

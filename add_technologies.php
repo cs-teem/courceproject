@@ -36,41 +36,21 @@ include "top header.php";
 
 
 
-                          <?php
-if(isset($_POST['post'])){
-$subject=$_POST['subject'];
-$discription=$_POST['discription'];
-$photo=addslashes(file_get_contents($_FILES["image"]["tmp_name"])); 
-$query="insert into home_tb(subject,discription,photo) values ('$subject','$discription','$photo')";
-if(mysqli_query($link,$query)){
-echo "<script> alert('the data has been posted'); </script>";
-}
-else{
-
-  echo "<script> alert('Faildddd'); </script>";
-}
-}
-
- ?>
+ 
  <?php
 if(isset($_POST['save'])){
-$cat_id=$_POST['cat_id'];
+
 $user=$_SESSION['login'];
 $title= $_POST['title'];
+
 $discription = $_POST['description'];
-$sql="INSERT INTO `question`( `description`, `u_id`, `cat_id`, `title`) VALUES('$discription',$user,$cat_id,'$title')";
+$photo=addslashes(file_get_contents($_FILES["photo"]["tmp_name"])); 
+$sql="INSERT INTO `technology`(`title`, `discription`, `image`, `user_id`, `date`) VALUES ('$title','$discription','$photo',$user,current_date)";
 
-if(mysqli_query($link,$sql)){
-echo "<script> alert('the data has been posted'); </script>";
-}
-else{
-
-  echo "<script> alert('Faildddd'); </script>";
-}
 }
  ?>
 
-                       <form method="post" action="askquestion.php">
+                       <form method="post" action="add_technologies.php" enctype="multipart/form-data">
                         <div class="cmp-int mg-t-20">
                             <div class="row">
                                 <div class="col-lg-1 col-md-2 col-sm-2 col-xs-12">
@@ -93,6 +73,24 @@ else{
                         <div class="cmp-int-box mg-t-20">
                             <textarea class="html-editor-cm" id="message" name="description" cols="30" rows="10" class="form-control" placeholder="Write Your Question?" ></textarea>
                             <!-- <input type="submit"  name="save" value="Save"> -->
+                               <div class="cmp-int mg-t-20">
+                            <div class="row">
+                                <div class="col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                    <div class="cmp-int-lb cmp-int-lb1 text-right">
+                                        <span>iamge: </span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-11 col-md-10 col-sm-10 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="nk-int-st cmp-int-in cmp-email-over">
+ 
+                                            <input type="file" name="photo" class="form-control" id="image"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+
                       <input type="hidden" value="<?php echo $_GET['ID']?>" name="cat_id">
                             <button type="submit" class="btn btn-success notika-btn-success" name="save">Save</button>
                                   <?php

@@ -53,7 +53,7 @@ include "top header.php";
      }
      ?><P style="font-style:italic;font-weight: bold;text-indent: inherit;text-align: justify">question</P>
                         <div  class="jumbotron" style="background-color:lavenderblush">
-                        <p style="margin-left:25px;"><?php echo $row['description']; ?>?</p></div>
+                        <p style="margin-left:25px;font-family: &quot;Times New Roman&quot;;line-hight:0.2"><?php echo $row['description']; ?>?</p></div>
                         <hr>
                         <DIV>
 
@@ -97,8 +97,8 @@ text-align:
 }
 ?>
                         </DIV>
-<div style="float:center">
-<a href="answerquestion.php?ID=<?php  echo $id;?>"type="submit" name="submit" class="btn btn-success notika-btn-success">  answer the question </a>
+<div style="float:right">
+<a  href="answerquestion.php?ID=<?php  echo $id;?>"type="submit" name="submit" class="btn btn-success notika-btn-success">  answer the question </a>
     <!-- Main Menu area End-->
 </div>
 
