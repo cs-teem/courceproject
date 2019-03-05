@@ -78,7 +78,6 @@ if($row==1){
 else{
   echo "<script>alert('incorrect username or password')</script>";
 }
-
 }
 ?>
 

@@ -16,6 +16,24 @@ include "link.php";
 <?php
 include "top header.php";
 ?>
+
+
+<?php
+if(isset($_POST['activateuser'])){
+	$userid=$_POST['userid'];
+	$query="update user set status=1 where id='$userid'";
+	mysqli_query($link,$query);
+	
+}
+if(isset($_POST['diactivateuser'])){
+	$userid=$_POST['userid'];
+	$query="update user set status=0 where id='$userid'";
+	mysqli_query($link,$query);
+	
+}
+
+
+?>
     <!-- Main Menu area End-->
     <!-- Start Status area -->
     

@@ -18,18 +18,33 @@ include "top header.php";
                         
     <?php
 if(isset($_POST['post'])){
-$name=$_POST['name'];
-$lastname=$_POST['lastname'];
-$email=$_POST['email'];
-$password=$_POST['password'];
+$name=mysql_real_escape_string($_POST['name']);
+$lastname=mysql_real_escape_string($_POST['lastname']);
+$email=mysql_real_escape_string($_POST['email']);
+$password=mysql_real_escape_string($_POST['password']);
+$enc_password=md5($password);
 $photo=addslashes(file_get_contents($_FILES["photo"]["tmp_name"])); 
-$query="insert into user(name,last_name,email,password,photo) values ('$name','$lastname','$email','$password','$photo')";
-if(mysqli_query($link,$query)){
-echo "<script> alert('the data has been posted'); </script>";
-}
-else{
 
-  echo "<script> alert('Faildddd'); </script>";
+if($name && $email && $password){
+	$confirm_code=rand();
+	
+$query="insert into user(name,last_name,email,password,photo,confirm_code) values ('$name','$lastname','$email','$enc_password','$photo','$confirm_code')";
+mysqli_query($link,$query);
+
+$headers = 'From: esmatullahsangary@gmail.com' . "\r\n" .
+    'Reply-To: webmaster@example.com' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+	
+$message="
+Confirm your Email
+Click the Link Bello to confirm your Email
+http://localhost/courceproject/ConfirmEmail.php?username=$name & code=$confirm_code"
+;
+mail($email,"Verifry your email",$message,$headers);
+echo "Registeration completed";
+
+
+
 }
 }
  ?>
