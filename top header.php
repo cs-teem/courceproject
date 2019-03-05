@@ -1,11 +1,10 @@
 
-
     <div class="header-top-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="logo-area">
-                        <a href="#" style="bg-color:green"><img src="img/logo/logoes.PNG" alt="" /></a>
+                        <a href="#" style="bg-color:green"><img src="img/logo/logos.PNG" alt="" /></a>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
@@ -61,7 +60,7 @@ glyphicon glyphicon-glass"></i></a>
 
 
                    <div class="search-people" class="col_6 column">
-                                         <span class="input-group-btn"></span>
+                                         <span class="input-group-btn">
                      <div class="title_right" id="search">
                 <div class="col-md-12 col-sm-12 col-xs-12 form-group pull-center ">
                   <div class="input-group">
@@ -101,7 +100,6 @@ glyphicon glyphicon-glass"></i></a>
                                         <a href="view_category.php">View All</a>
                                     </div>
                                 </div>
-
                             </li>
                         </ul>
                     </div>
@@ -109,5 +107,4 @@ glyphicon glyphicon-glass"></i></a>
             </div>
         </div>
     </div>
-    
     <!-- End Header Top Area -->

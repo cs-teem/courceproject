@@ -46,7 +46,7 @@ $title= $_POST['title'];
 $discription = $_POST['description'];
 $photo=addslashes(file_get_contents($_FILES["photo"]["tmp_name"])); 
 $sql="INSERT INTO `technology`(`title`, `discription`, `image`, `user_id`, `date`) VALUES ('$title','$discription','$photo',$user,current_date)";
-
+mysqli_query($link,$sql);
 }
  ?>
 
@@ -91,15 +91,10 @@ $sql="INSERT INTO `technology`(`title`, `discription`, `image`, `user_id`, `date
                             </div>
                             </div>
 
-                      <input type="hidden" value="<?php echo $_GET['ID']?>" name="cat_id">
+                   
                             <button type="submit" class="btn btn-success notika-btn-success" name="save">Save</button>
-                                  <?php
-        if(isset($_GET['ID'])){
-        $id = $_GET['ID'];
-
-     }
-     ?>
-                              <a href="topmenu.php?ID='<?php echo $id;?>'" style="float:right"class="btn btn-success notika-btn-success">back</a>
+  
+                             
                         </div>
                      
                         <div class="vw-ml-action-ls text-right mg-t-20">

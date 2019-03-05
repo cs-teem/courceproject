@@ -63,7 +63,7 @@ include "aside.php";
 
   </div>   
   <br>
-
+<br><br>
  <div class="row">
     <div class="col-sm-3 col-md-6">
        <p><?php echo $row['discription'];?></p>
@@ -78,6 +78,7 @@ include "aside.php";
   <hr>
        <?php
     };?>
+    <a  href="add_technologies.php"type="submit" name="submit" class="btn btn-success notika-btn-success"> add new post </a>
       </div>
     
     </div>
@@ -99,6 +100,3 @@ include "footer.php";
 
 </html> 
 
-
-
-INSERT INTO `technology` (`id`, `title`, `discription`, `photo`, `user_id`, `date`) VALUES (NULL, 'afghanistan', 'kabul is the capital of afghanistan', 'img/green1.png', '4', '2019-03-20 03:07:09');
