@@ -76,13 +76,22 @@ include "aside.php";
 
                                 <div class="jumbotron"><a class="notification" href="" >
     
-    <small>Answer</small>
+    <small>Answers</small>
     <span class="badge" style="font-size: 50%;line-height:0.2;"> <?php if($rows>1000){echo $rows['questions'];}else{echo"k+";}?></span>
 </a>                                 <span ><a href="answer.php?ID=<?php echo $row["id"];?>"></a></span>
                              
                              <span ><a href="answer.php?ID=<?php echo $row["id"];?>"><?php echo $row['description']?>?</a></span> 
-                       
+                         <div class="scorll" style="margin-right: 200px">  
+                                  <hr>
+                                  <?php 
+                                  $test=$row['id'];
+                                        $s="SELECT discription from question,answer WHERE question.id= answer.qu_id and question.id=$test order by discription DESC LIMIT 1" ;
+                                        $q=mysqli_query($link,$s);
+                                        $r=mysqli_fetch_array($q);
+                                        echo $r['discription'];
 
+                                   ?>
+</div>
 
 
 

@@ -29,6 +29,34 @@ color: white;
 	display: inline-block;
 	border-radius: 2px;
 }
+ .scorll{
+
+	border: none;
+	height: 120px;
+	width: 550px;
+	display:inline-block;
+	outline-color: #444;
+	
+
+}::-webkit-scrollbar {
+	
+width: 10px;
+height: 10px;
+background: none;
+
+}
+::-webkit-scrollbar-track {
+border: 1.4px solid green;
+border-radius: 10px;
+}
+::-webkit-scrollbar-thumb{
+	background: yellowgreen;
+	border-radius: 10px;
+}
+.scorll:hover {
+
+	overflow: scroll;
+}
 /*.notification {
   font-family: 'Font Awesome 5 Free';
   font-style: normal;

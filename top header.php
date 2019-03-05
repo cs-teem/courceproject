@@ -1,4 +1,4 @@
-s
+
 
     <div class="header-top-area">
         <div class="container">
@@ -61,7 +61,7 @@ glyphicon glyphicon-glass"></i></a>
 
 
                    <div class="search-people" class="col_6 column">
-                                         <span class="input-group-btn">
+                                         <span class="input-group-btn"></span>
                      <div class="title_right" id="search">
                 <div class="col-md-12 col-sm-12 col-xs-12 form-group pull-center ">
                   <div class="input-group">
@@ -101,6 +101,7 @@ glyphicon glyphicon-glass"></i></a>
                                         <a href="view_category.php">View All</a>
                                     </div>
                                 </div>
+
                             </li>
                         </ul>
                     </div>
@@ -108,4 +109,5 @@ glyphicon glyphicon-glass"></i></a>
             </div>
         </div>
     </div>
+    
     <!-- End Header Top Area -->
